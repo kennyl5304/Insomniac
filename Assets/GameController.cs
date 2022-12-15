@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public bool playerTped = false;
 
-    // Start is called before the first frame update
+    AudioSource src;
+    public bool playerTped;
+
+    public AudioClip crashSound;
+
     void Start()
     {
-        
+        src = GetComponent<AudioSource>();
+        playerTped = false;
     }
 
     // Update is called once per frame
@@ -20,6 +24,6 @@ public class GameController : MonoBehaviour
 
     public void playCrash()
     {
-
+        src.PlayOneShot(crashSound);
     }
 }
