@@ -18,7 +18,6 @@ public class BedJumpscare : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(this.transform.position.z);
         if (gc.playerTped)
         {
             if (timeDelay >= 0)
@@ -32,7 +31,7 @@ public class BedJumpscare : MonoBehaviour
                 crash();
             }
         }
-        if(this.transform.position.z > -78.3)
+        if(this.transform.position.z > -68.3)
         {
             Destroy(this.gameObject, 3);
         }
@@ -42,6 +41,6 @@ public class BedJumpscare : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, 90, 90);//new Vector3(transform.rotation.x, transform.rotation.y, 90f);
         transform.position = new Vector3(transform.position.x, 4f, transform.position.x);
-        rb.AddForce(transform.forward * -10, ForceMode.Impulse);
+        rb.AddForce(transform.right * -1, ForceMode.Impulse);
     }
 }

@@ -29,7 +29,7 @@ public class DollyInterface : MonoBehaviour {
 
 	//Private variable declarations
 	private float intHeightAtDistace;
-	private bool dzEnabled;
+	public bool dzEnabled;
 	private OVRCameraRig getOvrCam;
 
 	// Use this for initialization
@@ -47,7 +47,25 @@ public class DollyInterface : MonoBehaviour {
 			Debug.LogError("Target GameObject Not Assigned! Please assign a GameObject to target.");
 		}
 	}
-	
+
+	public void restart()
+	{
+
+		if (target != null)
+		{
+			// distance between two points in Vec3
+			float distance = Vector3.Distance(transform.position, target.position);
+			intHeightAtDistace = FrustumHeightAtDistance(distance);
+			dzEnabled = true;
+			//get the OVRCameraRig to access its juicy datas!
+			getOvrCam = GameObject.Find("OVRCameraRig").gameObject.GetComponent<OVRCameraRig>();
+		}
+		else
+		{
+			Debug.LogError("Target GameObject Not Assigned! Please assign a GameObject to target.");
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 		/*The dzEnabled bool is all set up but it's not used in this script
@@ -59,6 +77,8 @@ public class DollyInterface : MonoBehaviour {
 			float currDistance = Vector3.Distance(transform.position, target.position);
 			//adjust the FOV of the anchors, this in turn is used by the OVRCameraRig in EnsureGameObjectIntegrity(); to set the
 			// eye cameras.
+			
+			getOvrCam.centerEyeAnchor.GetComponent<Camera>().fieldOfView = FOVForHeightAndDistance(intHeightAtDistace, currDistance);
 			getOvrCam.leftEyeAnchor.GetComponent<Camera>().fieldOfView = FOVForHeightAndDistance(intHeightAtDistace, currDistance);
 			getOvrCam.rightEyeAnchor.GetComponent<Camera>().fieldOfView = FOVForHeightAndDistance(intHeightAtDistace, currDistance);
 		}

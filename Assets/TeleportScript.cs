@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TeleportScript : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class TeleportScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            txtToDisplay.GetComponent<TMP_Text>().text = "Press A to go to sleep";
             txtToDisplay.SetActive(true);
             playerInZone = true;
         }
@@ -47,6 +49,7 @@ public class TeleportScript : MonoBehaviour
             {
                 player.transform.position = destination.transform.position;
                 gc.playerTped = true;
+                gc.currStage = "hallway";
             }
         }
         else
