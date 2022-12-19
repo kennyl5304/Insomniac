@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InsomniacTest.unity
     guid: 15ece4fe4759cfd41ab930ecd9d4eb82
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 61da3eaa3a727084c81b41392428ed49
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2714d53d943181743b915d1b1b607384, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 95d490044d82ff744b4ec524f634236e, type: 2}
