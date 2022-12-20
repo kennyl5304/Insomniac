@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public string currStage;
     public bool playerTped;
     DollyInterface dolly;
+    public int gearsFound;
 
     public AudioClip crashSound;
 
@@ -43,7 +44,7 @@ public class GameController : MonoBehaviour
             dolly.dzEnabled = false;
             if (currStage == "clockPuzzle")
             {
-                objective.text = "Fix the clock by finding the gears (" + "/3)";
+                objective.text = "Fix the clock by finding the gears (" + gearsFound + "/3)";
             }
             else
             {

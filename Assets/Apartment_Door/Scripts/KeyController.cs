@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 //Script on Drag and drop will create box collider component automatically
 [RequireComponent(typeof(BoxCollider))]
@@ -7,7 +8,7 @@ public class KeyController : MonoBehaviour
 {
     BoxCollider keyCollider;
     Rigidbody keyRB;
-    public Text txtToDisplay;
+    public GameObject txtToDisplay;
     public DoorController DC;
 
     /// <summary>
@@ -27,7 +28,7 @@ public class KeyController : MonoBehaviour
         {
             DC.gotKey = true;
             txtToDisplay.gameObject.SetActive(true);
-            txtToDisplay.text = "Key Acquired";
+            txtToDisplay.GetComponent<TMP_Text>().text = "Key Acquired";
             this.gameObject.SetActive(false);
         }
     }
