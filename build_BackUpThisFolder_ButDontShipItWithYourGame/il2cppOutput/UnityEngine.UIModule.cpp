@@ -2513,6 +2513,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Canvas_set_pixelPerfect_m4610F1B69D813E9
 	_il2cpp_icall_func = (Canvas_set_pixelPerfect_m4610F1B69D813E93BC21F06E0FC4981A509963A5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Canvas::set_pixelPerfect(System.Boolean)");
 	_il2cpp_icall_func(__this, ___value0);
 }
+// System.Void UnityEngine.Canvas::set_planeDistance(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Canvas_set_planeDistance_m730278089C7546A512385305C1F250C6477C279E (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* __this, float ___value0, const RuntimeMethod* method) 
+{
+	typedef void (*Canvas_set_planeDistance_m730278089C7546A512385305C1F250C6477C279E_ftn) (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26*, float);
+	static Canvas_set_planeDistance_m730278089C7546A512385305C1F250C6477C279E_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Canvas_set_planeDistance_m730278089C7546A512385305C1F250C6477C279E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Canvas::set_planeDistance(System.Single)");
+	_il2cpp_icall_func(__this, ___value0);
+}
 // System.Int32 UnityEngine.Canvas::get_renderOrder()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Canvas_get_renderOrder_m4BC79FD8062270F9848DFE38DE6CC578BBF7DFAC (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* __this, const RuntimeMethod* method) 
 {

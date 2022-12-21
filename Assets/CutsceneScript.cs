@@ -6,10 +6,11 @@ using TMPro;
 
 public class CutsceneScript : MonoBehaviour
 {
-    GameObject cutscene;
+    public GameObject cutscene;
     bool playerInZone;
     public GameObject txtToDisplay;
-    public GameObject player;
+    public GameObject playerMovement;
+    public GameObject CMBrain;
     GameController gc;
     public GameObject shadow;
 
@@ -20,6 +21,7 @@ public class CutsceneScript : MonoBehaviour
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         playerInZone = false;
         shadow.SetActive(false);
+        CMBrain.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,6 +53,8 @@ public class CutsceneScript : MonoBehaviour
             {
                 cutscene.GetComponent<PlayableDirector>().Play();
                 shadow.SetActive(true);
+                CMBrain.SetActive(true);
+                playerMovement.SetActive(false);
             }
         }
         else

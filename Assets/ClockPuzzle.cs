@@ -7,11 +7,13 @@ public class ClockPuzzle : MonoBehaviour
     GameController gc;
     public GameObject key;
     public GameObject smoke;
+    bool isFixed;
     // Start is called before the first frame update
     void Start()
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         key.SetActive(false);
+        isFixed = false;
     }
 
     // Update is called once per frame
@@ -29,9 +31,10 @@ public class ClockPuzzle : MonoBehaviour
     {
         if(other.tag == "gear")
         {
-            if(this.gameObject.name == other.gameObject.name)
+            if(this.gameObject.name == other.gameObject.name && !isFixed)
             {
                 gc.gearsFound++;
+                isFixed = true;
             }
         }
     }
@@ -40,9 +43,10 @@ public class ClockPuzzle : MonoBehaviour
     {
         if(other.tag == "gear")
         {
-            if(this.gameObject.name == other.gameObject.name)
+            if(this.gameObject.name == other.gameObject.name && isFixed)
             {
                 gc.gearsFound--;
+                isFixed = false;
             }
         }
     }

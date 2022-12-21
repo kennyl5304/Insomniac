@@ -14055,7 +14055,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OVRCubemapCapture_RenderIntoCubemap_m661
 		// faceTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
 		RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* L_32 = V_8;
 		NullCheck(L_32);
-		VirtualActionInvoker1< int32_t >::Invoke(8 /* System.Void UnityEngine.Texture::set_dimension(UnityEngine.Rendering.TextureDimension) */, L_32, 2);
+		VirtualActionInvoker1< int32_t >::Invoke(9 /* System.Void UnityEngine.Texture::set_dimension(UnityEngine.Rendering.TextureDimension) */, L_32, 2);
 		// faceTexture.hideFlags = HideFlags.HideAndDontSave;
 		RenderTexture_tBA90C4C3AD9EECCFDDCC632D97C29FAB80D60D27* L_33 = V_8;
 		NullCheck(L_33);

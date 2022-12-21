@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
         playerTped = false;
         dolly = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<DollyInterface>();
         Debug.Log(dolly);
+        gearsFound = 0;
     }
 
     // Update is called once per frame

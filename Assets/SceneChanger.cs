@@ -7,6 +7,6 @@ public class SceneChanger : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Menu");
     }
 }
