@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using TMPro;
 
 public class CutsceneScript : MonoBehaviour
@@ -10,6 +11,7 @@ public class CutsceneScript : MonoBehaviour
     public GameObject txtToDisplay;
     public GameObject player;
     GameController gc;
+    public GameObject shadow;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class CutsceneScript : MonoBehaviour
         txtToDisplay.SetActive(false);
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         playerInZone = false;
+        shadow.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,7 +49,8 @@ public class CutsceneScript : MonoBehaviour
             this.gameObject.GetComponent<MeshRenderer>().enabled = true;
             if (OVRInput.Get(OVRInput.Button.One))
             {
-                
+                cutscene.GetComponent<PlayableDirector>().Play();
+                shadow.SetActive(true);
             }
         }
         else
